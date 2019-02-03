@@ -74,11 +74,33 @@ while True:
 
 
 
-for idnum in idnum_L:
-    match_prods = [p for p in products if str(p["id"]) == str(idnum)]
-    match_prods = match_prods[0]
-    sum_price = sum_price + match_prods["price"]
+#for idnum in idnum_L:
+    #match_prods = [p for p in products if str(p["id"]) == str(idnum)]
+    #match_prods = match_prods[0]
+    #sum_price = sum_price + match_prods["price"]
     ######print("The product you have selected is: " + match_prods["name"] + " " + str(match_prods["price"]))
         
         
 ######print("The Total Price is: " + str(sum_price))
+
+
+#price_round = {0:.2f}.format(idnum["price"])
+
+
+print("---------------------------------")
+print("GREEN FOODS GROCERY")
+print("WWW.GREEN-FOODS-GROCERY.COM")
+print("---------------------------------")
+### use date-time
+print("---------------------------------")
+print("SELECTED PRODUCTS:")
+for idnum in idnum_L:
+    match_prods = [p for p in products if str(p["id"]) == str(idnum)]
+       
+    match_prod_prime = match_prods[0]
+    
+    price_round = " (${0:.2f})".format(match_prod_prime["price"])
+    
+ 
+    sum_price = sum_price + match_prod_prime["price"]
+    print(match_prod_prime["name"] + " " + str(price_round)) #str(match_prods["price"])) # str(price_round)
