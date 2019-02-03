@@ -36,13 +36,13 @@ products = [
 #    print(x)
 #    x = x + 1
 
-x = 1
+#x = 1
 
-running_total = 0 
+#running_total = 0 
 
 
 
-while x < 5: 
+#while x < 5: 
 #    product = {
 #        "id":1,
 #        "name": "Chocolate Sandwich Cookies",
@@ -52,13 +52,33 @@ while x < 5:
 #}
 
 
-    selected_id = 1
-
-    matching_products = [p for p in products if p["id" == selected_id]]
-    product = matching_products[0]
-    price = product["price"]
-    running_total = running_total + price
-    x = x + 1
 
 
-print("THE TOTAL PRICE IS: " + str(running_total))
+
+#print("THE TOTAL PRICE IS: " + str(running_total))
+
+idnum_L = []
+sum_price = 0
+
+while True:
+    idnum = input("Please enter your product identifier (DONE if you do not have another product): ")
+    if idnum == "DONE":
+        break
+    else:
+        #match_prods = [p for p in products if str(p["id"]) == str(idnum)]
+        #match_prods = match_prods[0]
+        #sum_price = sum_price + match_prods["price"]
+        #print("The product you have selected is: " + match_prods["name"] + " " + str(match_prods["price"]))
+        idnum_L.append(idnum)
+
+
+
+
+for idnum in idnum_L:
+    match_prods = [p for p in products if str(p["id"]) == str(idnum)]
+    match_prods = match_prods[0]
+    sum_price = sum_price + match_prods["price"]
+    ######print("The product you have selected is: " + match_prods["name"] + " " + str(match_prods["price"]))
+        
+        
+######print("The Total Price is: " + str(sum_price))
