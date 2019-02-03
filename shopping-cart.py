@@ -91,7 +91,18 @@ print("---------------------------------")
 print("GREEN FOODS GROCERY")
 print("WWW.GREEN-FOODS-GROCERY.COM")
 print("---------------------------------")
-### use date-time
+time = datetime.datetime.now()
+
+a = time.strftime("%Y")
+b = time.strftime("%m")
+c = time.strftime("%d")
+d = time.strftime("%I")
+e = time.strftime("%M")
+f = time.strftime("%p")
+
+print("CHECKOUT AT: " + a + "-" + b + "-" + c + " " + d + ":" + e + " " + f)
+
+
 print("---------------------------------")
 print("SELECTED PRODUCTS:")
 for idnum in idnum_L:
@@ -103,4 +114,25 @@ for idnum in idnum_L:
     
  
     sum_price = sum_price + match_prod_prime["price"]
-    print(match_prod_prime["name"] + " " + str(price_round)) #str(match_prods["price"])) # str(price_round)
+    print("... " + match_prod_prime["name"] + " " + str(price_round)) #str(match_prods["price"])) # str(price_round)
+
+print("---------------------------------")
+
+
+
+tax = sum_price * .06
+Total = tax + sum_price
+
+Alpha = " {0:.2f}".format(tax)
+
+Beta = " {0:.2f}".format(Total)
+
+print("SUBTOTAL: $" + str(sum_price))
+print("TAX: $" + Alpha)
+print("TOTAL: $" + Beta)
+
+print("---------------------------------")
+
+print("THANKS, SEE YOU AGAIN SOON!")
+
+print("---------------------------------")
