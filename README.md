@@ -10,7 +10,7 @@ My submission for the ["Shopping Cart" Project](https://github.com/prof-rossetti
 
 ## Installation
 
-This porject requires Python 3.x.
+This project requires Python 3.x.
 
 Download the source code:
 
