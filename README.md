@@ -1,4 +1,4 @@
-# shopping_cart
+# Shopping Cart Project
 
 My submission for the ["Shopping Cart" Project](https://github.com/prof-rossetti/georgetown-opim-243-201901/tree/master/projects/shopping-cart).
 
