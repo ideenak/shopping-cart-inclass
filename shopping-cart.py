@@ -1,6 +1,12 @@
-#shopping-cart.py
-
 import datetime
+
+
+def to_usd(i):
+    delta = " {0:.2f}".format(i)
+    return delta
+
+
+
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
     {"id":2, "name": "All-Seasons Salt", "department": "pantry", "aisle": "spices seasonings", "price": 4.99},
@@ -24,38 +30,6 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
     ]
 
-#for p in products:
-#   print(p)
-
-#x = 1 #counter variable
-#x = 2 + 1
-#x = x + 1
-
-#while x < 5:
-#    x = input("Please input a product id: ")
-#    print(x)
-#    x = x + 1
-
-#x = 1
-
-#running_total = 0 
-
-
-
-#while x < 5: 
-#    product = {
-#        "id":1,
-#        "name": "Chocolate Sandwich Cookies",
-#        "department": "snakcs",
-#        "aisle": "Cookies cakes",
-#        "price": 3.50
-#}
-
-
-
-
-
-#print("THE TOTAL PRICE IS: " + str(running_total))
 
 idnum_L = []
 sum_price = 0
@@ -65,27 +39,8 @@ while True:
     if idnum == "DONE":
         break
     else:
-        #match_prods = [p for p in products if str(p["id"]) == str(idnum)]
-        #match_prods = match_prods[0]
-        #sum_price = sum_price + match_prods["price"]
-        #print("The product you have selected is: " + match_prods["name"] + " " + str(match_prods["price"]))
+        
         idnum_L.append(idnum)
-
-
-
-
-#for idnum in idnum_L:
-    #match_prods = [p for p in products if str(p["id"]) == str(idnum)]
-    #match_prods = match_prods[0]
-    #sum_price = sum_price + match_prods["price"]
-    ######print("The product you have selected is: " + match_prods["name"] + " " + str(match_prods["price"]))
-        
-        
-######print("The Total Price is: " + str(sum_price))
-
-
-#price_round = {0:.2f}.format(idnum["price"])
-
 
 print("---------------------------------")
 print("GREEN FOODS GROCERY")
@@ -93,14 +48,10 @@ print("WWW.GREEN-FOODS-GROCERY.COM")
 print("---------------------------------")
 time = datetime.datetime.now()
 
-a = time.strftime("%Y")
-b = time.strftime("%m")
-c = time.strftime("%d")
-d = time.strftime("%I")
-e = time.strftime("%M")
-f = time.strftime("%p")
+ftimestamp = time.strftime("%Y-%m-%d %I:%M %p")
 
-print("CHECKOUT AT: " + a + "-" + b + "-" + c + " " + d + ":" + e + " " + f)
+
+print("CHECKOUT AT: " + ftimestamp)
 
 
 print("---------------------------------")
@@ -109,12 +60,9 @@ for idnum in idnum_L:
     match_prods = [p for p in products if str(p["id"]) == str(idnum)]
        
     match_prod_prime = match_prods[0]
-    
-    price_round = " (${0:.2f})".format(match_prod_prime["price"])
-    
  
     sum_price = sum_price + match_prod_prime["price"]
-    print("... " + match_prod_prime["name"] + " " + str(price_round)) #str(match_prods["price"])) # str(price_round)
+    print("... " + match_prod_prime["name"] + " " + str(to_usd(match_prod_prime["price"]))) 
 
 print("---------------------------------")
 
@@ -123,16 +71,15 @@ print("---------------------------------")
 tax = sum_price * .06
 Total = tax + sum_price
 
-Alpha = " {0:.2f}".format(tax)
 
-Beta = " {0:.2f}".format(Total)
 
 print("SUBTOTAL: $" + str(sum_price))
-print("TAX: $" + Alpha)
-print("TOTAL: $" + Beta)
+print("TAX: $" + to_usd(tax))
+print("TOTAL: $" + to_usd(Total))
 
 print("---------------------------------")
 
 print("THANKS, SEE YOU AGAIN SOON!")
 
 print("---------------------------------")
+
