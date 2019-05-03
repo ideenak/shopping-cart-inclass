@@ -22,5 +22,5 @@ Run this script -
 python3 shopping_cart.py
 ```
 
-- then follow the on screen instructions.
+Then follow the on screen instructions.
 
