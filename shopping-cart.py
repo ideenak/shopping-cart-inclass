@@ -2,7 +2,7 @@ import datetime
 
 
 def to_usd(i):
-    delta = " {0:.2f}".format(i)
+    delta = "$ {0:.2f}".format(i)
     return delta
 
 
@@ -56,16 +56,31 @@ print("CHECKOUT AT: " + ftimestamp)
 
 print("---------------------------------")
 print("SELECTED PRODUCTS:")
-for idnum in idnum_L:
+#for idnum in idnum_L:
+#    match_prods = [p for p in products if str(p["id"]) == str(idnum)]
+#       
+#    match_prod_prime = match_prods[0]
+# 
+#    sum_price = sum_price + match_prod_prime["price"]
+#    print("... " + match_prod_prime["name"] + " " + str(to_usd(match_prod_prime["price"]))) 
+
+
+def findprod(i, sum_price):
     match_prods = [p for p in products if str(p["id"]) == str(idnum)]
        
     match_prod_prime = match_prods[0]
+    mu = float(match_prod_prime["price"])
  
-    sum_price = sum_price + match_prod_prime["price"]
-    print("... " + match_prod_prime["name"] + " " + str(to_usd(match_prod_prime["price"]))) 
+    sum_price = sum_price + mu
+    print("... " + match_prod_prime["name"] + " " + str(to_usd(mu)) )
+    return sum_price
+
+
+for idnum in idnum_L:
+    sum_price = findprod(idnum, sum_price)
+    
 
 print("---------------------------------")
-
 
 
 tax = sum_price * .06
@@ -73,13 +88,17 @@ Total = tax + sum_price
 
 
 
-print("SUBTOTAL: $" + str(sum_price))
-print("TAX: $" + to_usd(tax))
-print("TOTAL: $" + to_usd(Total))
+print("SUBTOTAL: " + str(sum_price))
+print("TAX: " + to_usd(tax))
+print("TOTAL: " + to_usd(Total))
 
 print("---------------------------------")
 
 print("THANKS, SEE YOU AGAIN SOON!")
 
 print("---------------------------------")
+
+
+
+
 
